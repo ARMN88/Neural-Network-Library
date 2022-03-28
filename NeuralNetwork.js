@@ -34,19 +34,19 @@ class MMath {
     newMatrix.set(multipliedMatrix);
     return newMatrix;
   }
-  static Sigmoid(matrix) {
+  static SigmoidM(matrix) {
     var simplifiedMatrix = [];
     for(let row = 0; row < matrix.array.length;row++) {
       simplifiedMatrix.push([]);
       for(let column = 0; column < matrix.array[0].length;column++) {
-        simplifiedMatrix[simplifiedMatrix.length - 1].push(MMath.Activation(matrix.array[row][column]));
+        simplifiedMatrix[simplifiedMatrix.length - 1].push(MMath.Sigmoid(matrix.array[row][column]));
       }
     }
     var newMatrix = new WeightMatrix(2, 3);
     newMatrix.set(simplifiedMatrix);
     return newMatrix;
   }
-  static Activation(z) {
+  static Sigmoid(z) {
     return 1/(1+Math.exp(z));
   }
 }
